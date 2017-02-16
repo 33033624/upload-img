@@ -6,9 +6,28 @@
 
 <title>测试页面</title>
 
+
+</head>
+
+
+
+<body>
+
+<div style="margin :0px auto; width:990px;">
+
+<input type="file"  name="file" id="doc" multiple="multiple"  style="width:150px;" onchange="javascript:setImagePreviews();" accept="image/*" />
+
+<div id="dd" style=" width:990px;"></div>
+
+</div>
+
+</body>
+
+</html>
+
 <script type="text/javascript">
 
-    //下面用于多图片上传预览功能
+    //下面用于多图片上传预览功能   触发Input的onchange时间的时候 执行setImagePreviews方法  然
 
     function setImagePreviews(avalue) {
 
@@ -18,9 +37,9 @@
 
         dd.innerHTML = "";
 
-        var fileList = docObj.files;
+        var fileList = docObj.files;//这是input读取到的文件列表
 
-        for (var i = 0; i < fileList.length; i++) {
+        for (var i = 0; i < fileList.length; i++) {//这个循环式进行数据循环绑定将获取到的图片绑定在我们的img标签里面
 
 
 
@@ -99,21 +118,3 @@
 
 
 </script>
-
-</head>
-
-
-
-<body>
-
-<div style="margin :0px auto; width:990px;">
-
-<input type="file"  name="file" id="doc" multiple="multiple"  style="width:150px;" onchange="javascript:setImagePreviews();" accept="image/*" />
-
-<div id="dd" style=" width:990px;"></div>
-
-</div>
-
-</body>
-
-</html>
